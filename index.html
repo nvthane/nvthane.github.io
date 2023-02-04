@@ -1,35 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-  <style>
-    .video-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100%;
-      overflow: hidden;
-    }
+  <meta charset="UTF-8">
+  <title>.nvthane</title>
+  <link rel="stylesheet" href="./style.css">
 
-    #video {
-      min-width: 100%;
-      min-height: 100%;
-    }
-  </style>
 </head>
 <body>
-  <div class="video-container">
-    <video id="video" src="https://github.com/nvthane/nvthane.github.io/raw/main/Files/Portfolio.mp4" loop="false" controls="false" muted></video>
-  </div>
+<!-- partial:index.partial.html -->
+<div id="set-height"></div>
+<p id="time"></p>
+<video id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
+  <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="https://github.com/nvthane/nvthane.github.io/raw/main/Files/Portfolio.mp4"></source>
+</video>
+<!-- partial -->
+  <script  src="./script.js"></script>
 
-  <script>
-    const video = document.getElementById("video");
-    const frameTime = 1 / 30; // 30 frames per second
-
-    window.addEventListener("scroll", function () {
-      const scrollPercentage = (window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-      video.currentTime = video.currentTime + frameTime;
-    });
-  </script>
 </body>
 </html>
