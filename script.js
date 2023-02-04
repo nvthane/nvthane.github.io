@@ -1,6 +1,6 @@
 var frameNumber = 0, // start video at frame 0
     // lower numbers = faster playback
-    playbackConst = 250, 
+    playbackConst = 300, 
     // get page height from video duration
     setHeight = document.getElementById("set-height"), 
     // select video element         
@@ -12,9 +12,16 @@ vid.addEventListener('loadedmetadata', function() {
 });
 
 // Use requestAnimationFrame for smooth playback
-function scrollPlay(){  
-  var frameNumber  = window.pageYOffset/playbackConst;
-  vid.currentTime  = frameNumber;
+function scrollPlay() {
+  var frameNumber = window.pageYOffset / playbackConst,
+      vid = document.getElementById("v0"),
+      maxFramesToRender = 10;
+  
+  if (Math.floor(frameNumber) > maxFramesToRender) {
+    vid.currentTime = frameNumber - maxFramesToRender;
+  } else {
+    vid.currentTime = 0;
+  }
   window.requestAnimationFrame(scrollPlay);
 }
 
