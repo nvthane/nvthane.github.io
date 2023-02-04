@@ -1,29 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>.nvthane</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    #set-height {
-      display: block;
-    }
-    
-    #frame {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-    
-    p {
-      font-family: helvetica;
-      font-size: 24px;
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -33,22 +14,7 @@
   <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="https://github.com/nvthane/nvthane.github.io/raw/main/Files/Portfolio.mp4"></source>
 </video>
 <!-- partial -->
-  <script>
-  var vid = document.getElementById('v0'); 
-  vid.addEventListener('loadedmetadata', function() {
-    vid.currentTime = 0; // start the video at the first frame
-    vid.play(); // start playing the video
-  });
-
-  // Calculate the current frame based on the scroll position
-  window.onscroll = function() {
-    var frameNumber = window.pageYOffset / playbackConst;
-    vid.currentTime = frameNumber;
-  }
-  </script>
+  <script  src="./script.js"></script>
 
 </body>
 </html>
-
-
-
