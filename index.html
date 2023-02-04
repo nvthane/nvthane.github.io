@@ -19,15 +19,16 @@
 </head>
 <body>
   <div class="video-container">
-    <video id="video" src="https://github.com/nvthane/nvthane.github.io/raw/main/Files/Portfolio.mp4" loop autoplay muted></video>
+    <video id="video" src="https://github.com/nvthane/nvthane.github.io/raw/main/Files/Portfolio.mp4" loop muted></video>
   </div>
 
   <script>
     const video = document.getElementById("video");
+    const frameTime = 1 / 30; // 30 frames per second
 
     window.addEventListener("scroll", function () {
       const scrollPercentage = (window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-      video.currentTime = scrollPercentage * video.duration;
+      video.currentTime = video.currentTime + frameTime;
     });
   </script>
 </body>
